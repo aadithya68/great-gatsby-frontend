@@ -6,12 +6,13 @@
     cd great-gatsby/
     gatsby develop
     ```
+
     **To start the app using npm**
+
     1. Clone the repository.
     2. Delete package.lock files if any.
     3. Run npm install
     4. Open localhost:8000 to see live app running on dev server.
-    
 
 1.  **Open the source code and start editing!**
 

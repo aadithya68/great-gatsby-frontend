@@ -1,7 +1,7 @@
 import React from "react";
 import { handleLogin, isLoggedIn } from "../utils/auth";
 import Form from "./Form";
-import { navigate } from "gatsby"
+import { navigate } from "gatsby";
 
 class Login extends React.Component {
   state = {
@@ -19,7 +19,7 @@ class Login extends React.Component {
     event.preventDefault();
     console.log(handleLogin(this.state));
     if (handleLogin(this.state)) {
-        navigate(`/app`);
+      navigate(`/app`);
     }
   }
 
