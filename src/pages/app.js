@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HeaderFooterLayout from "../components/header-footer-layout";
 import MainLayout from "../components/main-layout";
 import GroupsLayout from "../components/groups-layout";
@@ -6,6 +6,7 @@ import FeedLayout from "../components/feed-layout";
 import LoginButtonLayout from "../components/login-button-layout";
 
 export default function Home() {
+  const [movieList, setMovieList] = useState(["demo"])
   return (
     <div class="container-fluid">
       <HeaderFooterLayout>
@@ -19,8 +20,8 @@ export default function Home() {
         </div>
       </HeaderFooterLayout>
       <MainLayout>
-        <GroupsLayout></GroupsLayout>
-        <FeedLayout></FeedLayout>
+        <GroupsLayout setMovieList={setMovieList}></GroupsLayout>
+        <FeedLayout movieList={movieList}></FeedLayout>
       </MainLayout>
     </div>
   );
