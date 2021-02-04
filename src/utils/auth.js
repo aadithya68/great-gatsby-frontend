@@ -36,6 +36,14 @@ export const handleLogin = ({ username, password }) => {
       email: `aadithya68@gmail.com`,
     });
   }
+  if (username === `gatsby` && password === `bharani`) {
+    console.log(`Credentials match! Setting the active user.`);
+    return setUser({
+      name: `Bharani`,
+      legalName: `Bharani Aravind`,
+      email: `bharani.aravind93@gmail.com`,
+    });
+  }
 
   return false;
 };
