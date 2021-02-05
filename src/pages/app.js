@@ -19,7 +19,6 @@ export default function Home() {
         </div>
       </HeaderFooterLayout>
       <MainLayout>
-        <GroupsLayout></GroupsLayout>
         <FeedLayout></FeedLayout>
       </MainLayout>
     </div>
