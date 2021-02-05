@@ -4,7 +4,7 @@ export default function MainLayout({ children }) {
     backgroundImage: `linear-gradient(to bottom, #eeeeee 0%,#eeeeee 100%)`,
   };
   return (
-    <div class="row" style={style}>
+    <div style={style}>
       {children}
     </div>
   );

@@ -1,0 +1,10 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+ul{
+    list-style: none;
+    padding:0;
+}

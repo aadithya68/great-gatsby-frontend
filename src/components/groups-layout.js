@@ -1,5 +1,6 @@
 import React from "react";
 import { createPages } from "./controller";
+import "./groups-layout.css";
 
 class GroupsLayout extends React.Component {
   constructor(props) {
@@ -22,19 +23,26 @@ class GroupsLayout extends React.Component {
 
   render(){
     return (
-      <div class="col-md-12">
-        <div class="row">
-          <div >
-            <h6 onClick={() => this.getMovies("tamil")} style={this.headerStyle}>MOVIE PLAYLISTS</h6>
-          </div>
-          <div>
-            <h6 onClick={() => this.getMovies("avengers")} style={this.headerStyle}>STARRED GROUPS</h6>
-          </div>
-          <div>
-            <h6 onClick={() => this.getMovies("marvel")} style={this.headerStyle}>GROUPS</h6>
-          </div>
-        </div>
-      </div>
+      <ul class="flex">
+          <li >
+            <ul  style={this.headerStyle}>
+              Movie playlist
+              <li><a onClick={() => this.getMovies("tamil")}>Kollywood playlist</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul  style={this.headerStyle}>
+              Starred groups
+              <li><a onClick={() => this.getMovies("Avengers")}>Avengers</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul style={this.headerStyle}>
+                Groups
+                <li><a onClick={() => this.getMovies("marvel")}>Marvel maniacs</a></li>
+            </ul>
+          </li>
+      </ul>
     );
   }
 

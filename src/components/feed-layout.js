@@ -3,6 +3,7 @@ import { createPages } from "./controller";
 import MovieCardLayout from "./movie-card-layout";
 import MovieDetailsLayout from "./movie-details-layout";
 import GroupsLayout from "./groups-layout"
+import "./feed-layout.css";
 
 class FeedLayout extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class FeedLayout extends React.Component {
       movies: [],
     };
     this.style = {
-      backgroundImage: `linear-gradient(to right, #7d7e7d 0%,#0e0e0e 100%)`,
+      background: "#333333",
     };
   }
 
@@ -29,11 +30,11 @@ class FeedLayout extends React.Component {
 
   render() {
     return (
-      <div class="col-md-12">
+      <div class="row">
           <div class="col-md-3" style={this.style}>
             <GroupsLayout setMoviesFromGroup={this.setMoviesFromGroup}/>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9 movies-column">
             {this.state.movies.map((movie) => {
               return (
                 <MovieCardLayout>
