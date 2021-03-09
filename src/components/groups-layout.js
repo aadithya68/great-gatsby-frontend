@@ -1,25 +1,51 @@
 import React from "react";
+import { createPages } from "./controller";
+import "./groups-layout.css";
 
-export default function GroupsLayout() {
-  const style = {
-    backgroundImage: `linear-gradient(to right, #7d7e7d 0%,#0e0e0e 100%)`,
-  };
-  const headerStyle = {
-    color: "yellow",
-  };
-  return (
-    <div class="col-md-3" style={style}>
-      <div class="row">
-        <div class="col-md-12">
-          <h6 style={headerStyle}>MOVIE PLAYLISTS</h6>
-        </div>
-        <div class="col-md-12">
-          <h6 style={headerStyle}>STARRED GROUPS</h6>
-        </div>
-        <div class="col-md-12">
-          <h6 style={headerStyle}>GROUPS</h6>
-        </div>
-      </div>
-    </div>
-  );
+class GroupsLayout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.headerStyle = {
+      color: "yellow",
+    };
+  }
+
+
+  getMovies(groupvalue){
+    console.log(groupvalue);
+    createPages(groupvalue).then((data) => {
+      console.log(data);
+      let movies = JSON.parse(data.data.posts).results;
+      console.log(movies);
+      this.props.setMoviesFromGroup(movies);
+    });
+  }
+
+  render(){
+    return (
+      <ul class="flex">
+          <li >
+            <ul  style={this.headerStyle}>
+              Movie playlist
+              <li><a onClick={() => this.getMovies("tamil")}>Kollywood playlist</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul  style={this.headerStyle}>
+              Starred groups
+              <li><a onClick={() => this.getMovies("Avengers")}>Avengers</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul style={this.headerStyle}>
+                Groups
+                <li><a onClick={() => this.getMovies("marvel")}>Marvel maniacs</a></li>
+            </ul>
+          </li>
+      </ul>
+    );
+  }
+
 }
+
+export default GroupsLayout;

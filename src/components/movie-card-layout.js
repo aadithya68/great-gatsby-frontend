@@ -12,8 +12,8 @@ export default function MovieCardLayout({ children }) {
     backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%),url(${Background})`,
   };
   return (
-    <div class="col-md-3" id="movie-card" style={style}>
-      {children}
-    </div>
+      <div class="col-md-3">
+        {children}
+      </div>
   );
 }
