@@ -52,8 +52,7 @@ export const handleLogin = ({ username, password }) => {
       email: `thilakraj.kamaraj@gmail.com`,
     });
   }
-};
-  return false;
+    return false;
 };
 
 export const isLoggedIn = () => {
